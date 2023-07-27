@@ -36,12 +36,10 @@ class BlogItemDetails extends Component {
   }
 
   renderBlogItemDetails = () => {
-    const {blogData, isLoading} = this.state
+    const {blogData} = this.state
     const {title, imageUrl, content, avatarUrl, author} = blogData
 
-    return isLoading ? (
-      <Loader type="TailSpin" color="#00BFFF" height={50} width={50} />
-    ) : (
+    return (
       <div className="blog-info">
         <h1 className="blog-details-title">{title}</h1>
 
@@ -57,7 +55,18 @@ class BlogItemDetails extends Component {
   }
 
   render() {
-    return <div className="blog-container">{this.renderBlogItemDetails()}</div>
+    const {isLoading} = this.state
+    return (
+      <div className="blog-container">
+        {isLoading ? (
+          <div data-testid="loader">
+            <Loader type="TailSpin" color="#00bfff" height={50} width={50} />
+          </div>
+        ) : (
+          this.renderBlogItemDetails()
+        )}
+      </div>
+    )
   }
 }
 

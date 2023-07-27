@@ -1,9 +1,13 @@
+.blog-item {
+  border: 1px solid #d3d3d3;
+  border-radius: 5px;
+  margin: 15px;
+  list-style-type: none;
+}
+
 .blog-item-link {
   color: black;
   text-decoration: none;
-  border: 1px solid lightgray;
-  border-radius: 5px;
-  margin: 15px;
 }
 
 .item-container {
